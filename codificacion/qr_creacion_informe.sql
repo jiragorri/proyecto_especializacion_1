@@ -8,6 +8,7 @@ select
 	c.Direccion as Direccion_cliente,
 	c.Pais as Pais_cliente,
 	c.Telefono as Telefono_cliente,
+	c.Clasificacion_credito as Clasificacion_credito,
 	pr.Producto as Producto,
 	z.Zona as Zona_venta,
 	ve.Apellido as Apellido_Vendedor,
