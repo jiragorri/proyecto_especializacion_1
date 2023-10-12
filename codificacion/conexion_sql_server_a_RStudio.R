@@ -29,8 +29,33 @@ barplot(tf,horiz = TRUE, main = "Venta por Producto", col = "blue")
 prueba <- table(df$Pais_cliente)
 print(prueba)
 
-df1 <- readxl()
+hist(df$Salario_vendedor, freq = FALSE, xlab = "Venta", main = "Histograma de Salarios")
+
+Q1 <- quantile(x=df$Venta, 0.25)
+Q2 <- quantile(x=df$Venta, 0.5)
+Q3 <- quantile(x=df$Venta, 0.75)
+
+barplot(table(df$Producto),names.arg = df$Ventas)
+abline(h = Q1, col = "red")
+abline(h = Q2, col = "blue")
+abline(h = Q3, col = "green")
+
+# Clasificación credito
+to <- sort(table(df$Clasificacion_credito), decreasing = FALSE)
+porcentajes <- round(prop.table(to) * 100,2)
+bp <- barplot(to,horiz = TRUE, main = "Clasificación Credito", col = "blue")
+text(to, bp, labels = paste(porcentajes, "%"), pos = 4, col = "black")
 
 
+# Medidas de dispersión
+
+Promedio_media <- mean(df$Venta)
+print(Promedio_media)
+
+Promedio_mediana <- median(df$Venta, na.rm = FALSE)
+print(Promedio_mediana)
+
+Promedio_de <- sd(df$Venta)
+print(Promedio_de)
 
 
