@@ -29,6 +29,8 @@ barplot(tf,horiz = TRUE, main = "Venta por Producto", col = "blue")
 prueba <- table(df$Pais_cliente)
 print(prueba)
 
+df1 <- readxl()
+
 
 
 
